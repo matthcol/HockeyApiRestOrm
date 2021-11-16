@@ -28,7 +28,7 @@ component extends="coldbox.system.testing.BaseModelTest" model="models.Team"{
 
 	function run(){
 
-		describe( "Team Suite", function(){
+		describe( "Team", function(){
 			it( "team can be created", function(){
 				expect( getInstance( "Team" ) ).toBeComponent()
 			});
