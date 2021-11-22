@@ -123,6 +123,8 @@
 		 */
 		interceptors = [];
 
+		orm = { injection = { enabled=true } };
+
 		/**
 		 * --------------------------------------------------------------------------
 		 * Module Settings

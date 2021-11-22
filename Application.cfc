@@ -25,13 +25,13 @@ component {
 	this.mappings[ "/cborm" ] = COLDBOX_APP_ROOT_PATH & "modules/cborm";
 
 	// The default dsn name in the ColdBox scaffold
-	this.datasource = "coldbox"; 
+	this.datasource = "hockeydb"; 
 	// ORM Settings + Datasource
 	this.ormEnabled = "true";
 	this.ormSettings = {
 		cfclocation = [ "models" ], // Where our entities exist
 		logSQL = true, // Remove after development to false.
-		dbcreate = "update", // Generate our DB
+		dbcreate = "update", // Generate our DB : none, update, dbcreate
 		automanageSession = false, // Let cborm manage it
 		flushAtRequestEnd = false, // Never do this! Let cborm manage it
 		eventhandling = true, // Enable events
@@ -48,6 +48,7 @@ component {
 			COLDBOX_APP_MAPPING
 		);
 		application.cbBootstrap.loadColdbox();
+		this.ormEnabled = "true";
 		return true;
 	}
 
@@ -59,8 +60,8 @@ component {
 	// request start
 	public boolean function onRequestStart( string targetPage ){
 		// If we reinit our app, reinit the ORM too
-		if( application.cbBootstrap.isFWReinit() )
-			ormReload();
+		//if( application.cbBootstrap.isFWReinit() )
+		//	ormReload();
 		
 		// Process ColdBox Request
 		application.cbBootstrap.onRequestStart( arguments.targetPage );

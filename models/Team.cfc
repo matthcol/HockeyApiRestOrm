@@ -4,6 +4,7 @@
 component persistent="true" table="Team" extends="cborm.models.ActiveEntity"{
 
 	// Primary Key
+	// generator : uuid, native
 	property name="id" fieldtype="id" column="id" generator="native" setter="false";
 
 	// Properties
@@ -21,7 +22,7 @@ component persistent="true" table="Team" extends="cborm.models.ActiveEntity"{
 	// Mementifier
 	this.memento = {
 		// An array of the properties/relationships to include by default
-		defaultIncludes = [ "*" ],
+		defaultIncludes = [ "id", "name", "city", "firstYearOfPlay" ],
 		// An array of properties/relationships to exclude by default
 		defaultExcludes = [],
 		// An array of properties/relationships to NEVER include

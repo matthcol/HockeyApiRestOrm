@@ -14,26 +14,29 @@ component {
 		 *
 		 */
 
+		route("/teams/search", "teams.search");
 		resources("teams");
+		resources(resource="api/teams2", handler="api.Teams2");
+		
 
 		// A nice healthcheck route example
-		route( "/healthcheck", function( event, rc, prc ) {
-			return "Ok!";
-		} );
+	// 	route( "/healthcheck", function( event, rc, prc ) {
+	// 		return "Ok!";
+	// 	} );
 
-		// API Echo
-		get( "/api/echo", "Echo.index" );
+	// 	// API Echo
+	// 	get( "/api/echo", "Echo.index" );
 
-		// API Authentication Routes
-		post( "/api/login", "Auth.login" );
-		post( "/api/logout", "Auth.logout" );
-		post( "/api/register", "Auth.register" );
+	// 	// API Authentication Routes
+	// 	post( "/api/login", "Auth.login" );
+	// 	post( "/api/logout", "Auth.logout" );
+	// 	post( "/api/register", "Auth.register" );
 
-		// API Secured Routes
-		get( "/api/whoami", "Echo.whoami" );
+	// 	// API Secured Routes
+	// 	get( "/api/whoami", "Echo.whoami" );
 
-		// Conventions based routing
-		route( ":handler/:action?" ).end();
+	// 	// Conventions based routing
+	// 	route( ":handler/:action?" ).end();
 	}
 
 }
