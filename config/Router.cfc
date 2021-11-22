@@ -14,6 +14,9 @@ component {
 		 *
 		 */
 
+		// generate all CRUD routes for handler with same name : teams
+		resources("teams");
+
 		// A nice healthcheck route example
 		route( "/healthcheck", function( event, rc, prc ) {
 			return "Ok!";

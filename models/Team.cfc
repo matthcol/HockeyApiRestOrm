@@ -21,7 +21,7 @@ component persistent="true" table="Team" extends="cborm.models.ActiveEntity"{
 	// Mementifier
 	this.memento = {
 		// An array of the properties/relationships to include by default
-		defaultIncludes = [ "*" ],
+		defaultIncludes = [ "id", "name", "city" ],
 		// An array of properties/relationships to exclude by default
 		defaultExcludes = [],
 		// An array of properties/relationships to NEVER include
