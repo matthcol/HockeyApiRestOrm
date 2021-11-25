@@ -10,6 +10,7 @@ component persistent="true" table="Team" extends="cborm.models.ActiveEntity"{
 	property name="name" ormtype="string";
 	property name="city" ormtype="string";
 	property name="firstYearOfPlay" ormtype="integer";
+	property name="active" ormtype="boolean";
 	
 
 	// Validation
@@ -21,7 +22,7 @@ component persistent="true" table="Team" extends="cborm.models.ActiveEntity"{
 	// Mementifier
 	this.memento = {
 		// An array of the properties/relationships to include by default
-		defaultIncludes = [ "id", "name", "city" ],
+		defaultIncludes = [ "id", "name", "city", "active", "firstYearOfPlay" ],
 		// An array of properties/relationships to exclude by default
 		defaultExcludes = [],
 		// An array of properties/relationships to NEVER include

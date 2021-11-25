@@ -14,8 +14,18 @@ component {
 		 *
 		 */
 
+		// route en extra sur le handler declaré en tant que resources
+		get('/teams/searchByRangeYear', "api.Teams.searchByRangeYear");
+		// route('/teams/searchByRangeYear')
+		// 	.withAction({
+		// 		GET = 'searchByRangeYear'
+		// 	})
+		// 	.toHandler("api.Teams");
+
+		// https://coldbox.ortusbooks.com/the-basics/routing/routing-dsl/resourceful-routes
 		// generate all CRUD routes for handler with same name : teams
-		resources("teams");
+		// resources("teams");
+		resources(resource="teams", handler="api.Teams");
 
 		// A nice healthcheck route example
 		route( "/healthcheck", function( event, rc, prc ) {
