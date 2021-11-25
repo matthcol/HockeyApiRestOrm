@@ -28,10 +28,11 @@ component {
 	this.datasource = "hockeydb"; 
 	// ORM Settings + Datasource
 	this.ormEnabled = "true";
+	// this.ormEnabled = !isNull( application.cbBootstrap );
 	this.ormSettings = {
 		cfclocation = [ "models" ], // Where our entities exist
 		logSQL = true, // Remove after development to false.
-		dbcreate = "update", // Generate our DB
+		dbcreate = "update", // Generate our DB : none, dropcreate, update
 		automanageSession = false, // Let cborm manage it
 		flushAtRequestEnd = false, // Never do this! Let cborm manage it
 		eventhandling = true, // Enable events
