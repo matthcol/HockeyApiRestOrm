@@ -27,6 +27,8 @@ component {
 		// resources("teams");
 		resources(resource="teams", handler="api.Teams");
 
+		resources(resource="equipes", handler="api.Equipe");
+
 		// A nice healthcheck route example
 		route( "/healthcheck", function( event, rc, prc ) {
 			return "Ok!";

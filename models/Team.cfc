@@ -14,8 +14,10 @@ component persistent="true" table="Team" extends="cborm.models.ActiveEntity"{
 	
 
 	// Validation
+	// https://coldbox-validation.ortusbooks.com/overview/valid-constraints
 	this.constraints = {
 		// Example: age = { required=true, min="18", type="numeric" }
+		name = { required=true, size="3..25" },
 		firstYearOfPlay = { required=false, min="1875", type="numeric" }
 	};
 
