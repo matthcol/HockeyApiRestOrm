@@ -68,16 +68,8 @@ function create( event, rc, prc ){
 }
 
 	/**
-	 * show
+ 	 * show a person
 	 */
-	/**
- * show a person
- */
-function show( event, rc, prc ){
-    // return teamService
-	/**
- * show a person
- */
 function show( event, rc, prc ){
 	return getInstance( "Team" )
        	.get( rc.id ?: 0 )
@@ -85,11 +77,8 @@ function show( event, rc, prc ){
 }
 
 	/**
-	 * update
+	 * Update a person
 	 */
-	/**
- * Update a person
- */
 function update( event, rc, prc ){
     prc.team = teamService
         .getOrFail( rc.id ?: -1 )
