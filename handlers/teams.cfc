@@ -21,24 +21,32 @@ component extends="cborm.models.resources.BaseHandler"{
  *
  * @override
  */
-function index( event, rc, prc ){
-    // Criterias and Filters
-    param rc.sortOrder             = "firstYearOfPlay desc";
-    param rc.page                 = 1;
-    param rc.firstYearOfPlay = 1910;
+// function index( event, rc, prc ){
+//     // Criterias and Filters
+//     param rc.sortOrder             = "firstYearOfPlay desc";
+//     param rc.page                 = 1;
+//     param rc.firstYearOfPlay = 1910;
   
-    // Build up a search criteria and let the base execute it
-    arguments.criteria = newCriteria()
-        .gt( "firstYearOfPlay", autoCast( "firstYearOfPlay", rc.firstYearOfPlay ));
-    super.index( argumentCollection=arguments );
-}
+//     // Build up a search criteria and let the base execute it
+//     arguments.criteria = newCriteria()
+//         .gt( "firstYearOfPlay", autoCast( "firstYearOfPlay", rc.firstYearOfPlay ));
+//     super.index( argumentCollection=arguments );
+// }
 
 function search( event, rc, prc ){
-  param rc.sortOrder             = "firstYearOfPlay desc";
+    param rc.sortOrder             = "firstYearOfPlay";
     param rc.page                 = 1;
     param rc.firstYearOfPlay = 1910;
+    param rc.division = "__nodivision__";
        arguments.criteria = newCriteria()
-        .gt( "firstYearOfPlay", autoCast( "firstYearOfPlay", rc.firstYearOfPlay ));
+        .gt( "firstYearOfPlay", autoCast( "firstYearOfPlay", rc.firstYearOfPlay ))
+        .joinTo("division","d")
+        .like("d.name", "%" & rc.division & "%");
+        // .like("division.name", "%" & rc.division & "%"); // not working
+        //.createCriteria("division")
+        //.withdivision()
+        //.like("name", "%" & rc.division & "%");
+
     super.index( argumentCollection=arguments );
 }
 

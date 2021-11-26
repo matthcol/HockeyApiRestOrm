@@ -18,6 +18,8 @@ component {
 		resources("teams");
 		resources(resource="api/teams2", handler="api.Teams2");
 		
+		resources("divisions");
+		resources("players");
 
 		// A nice healthcheck route example
 	// 	route( "/healthcheck", function( event, rc, prc ) {

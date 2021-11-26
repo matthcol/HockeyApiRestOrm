@@ -44,7 +44,7 @@ component{
 			.list( asQuery=false )
 			// Map the entities to mementos
 			.map( function( item ){
-				return item.getMemento( includes="id" );
+				return item.getMemento( includes=["id","division"] );
 			} );
 	}
 

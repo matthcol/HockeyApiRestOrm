@@ -1,30 +1,25 @@
 /**
- * A cool Team entity
+ * A cool Player entity
  */
-component persistent="true" table="Team" extends="cborm.models.ActiveEntity"{
+component persistent="true" table="Player" extends="cborm.models.ActiveEntity"{
 
 	// Primary Key
-	// generator : uuid, native
 	property name="id" fieldtype="id" column="id" generator="native" setter="false";
 
 	// Properties
 	property name="name" ormtype="string";
-	property name="city" ormtype="string";
-	property name="firstYearOfPlay" ormtype="integer";
-
-	property name="division" cfc="Division" fieldtype="many-to-one" fkcolumn="division_id";
+	property name="birthdate" ormtype="date";
 	
 
 	// Validation
 	this.constraints = {
 		// Example: age = { required=true, min="18", type="numeric" }
-		firstYearOfPlay = { required=false, min="1875", type="numeric" }
 	};
 
 	// Mementifier
 	this.memento = {
 		// An array of the properties/relationships to include by default
-		defaultIncludes = [ "id", "name", "city", "firstYearOfPlay" ],
+		defaultIncludes = [ "name","birthdate" ],
 		// An array of properties/relationships to exclude by default
 		defaultExcludes = [],
 		// An array of properties/relationships to NEVER include

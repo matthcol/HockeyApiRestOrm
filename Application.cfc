@@ -25,7 +25,7 @@ component {
 	this.mappings[ "/cborm" ] = COLDBOX_APP_ROOT_PATH & "modules/cborm";
 
 	// The default dsn name in the ColdBox scaffold
-	this.datasource = "hockeydb"; 
+	this.datasource = "hockeydb2"; 
 	// ORM Settings + Datasource
 	this.ormEnabled = "true";
 	this.ormSettings = {
