@@ -59,6 +59,11 @@ component {
 
 	// request start
 	public boolean function onRequestStart( string targetPage ){
+		if( not isDefined("application.cbBootstrap") )
+        {
+            this.onApplicationStart();
+        }
+
 		// If we reinit our app, reinit the ORM too
 		if( application.cbBootstrap.isFWReinit() )
 			ormReload();

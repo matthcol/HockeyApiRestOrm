@@ -1,34 +1,26 @@
 /**
- * A cool Team entity
+ * A cool Division entity
  */
-component persistent="true" table="Team" extends="cborm.models.ActiveEntity"{
+component persistent="true" table="Division" extends="cborm.models.ActiveEntity"{
 
 	// Primary Key
 	property name="id" fieldtype="id" column="id" generator="native" setter="false";
 
 	// Properties
 	property name="name" ormtype="string";
-	property name="city" ormtype="string";
-	property name="firstYearOfPlay" ormtype="integer";
-	property name="active" ormtype="boolean";
-
-	// association many-to-one vers Division
-	// property name="division" cfc="Division" fieldtype="many-to-one" fkcolumn="division_id" lazy=false;
-	property name="division" cfc="Division" fieldtype="many-to-one" fkcolumn="division_id"; // lazy=true
+	property name="shortName" ormtype="string";
+	property name="abbreviation" ormtype="string";
 	
 
 	// Validation
-	// https://coldbox-validation.ortusbooks.com/overview/valid-constraints
 	this.constraints = {
 		// Example: age = { required=true, min="18", type="numeric" }
-		name = { required=true, size="3..25" },
-		firstYearOfPlay = { required=false, min="1875", type="numeric" }
 	};
 
 	// Mementifier
 	this.memento = {
 		// An array of the properties/relationships to include by default
-		defaultIncludes = [ "id", "name", "city", "active", "firstYearOfPlay" ],
+		defaultIncludes = [ "id", "name", "shortName", "abbreviation" ],
 		// An array of properties/relationships to exclude by default
 		defaultExcludes = [],
 		// An array of properties/relationships to NEVER include

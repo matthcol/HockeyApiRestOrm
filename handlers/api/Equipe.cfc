@@ -1,7 +1,8 @@
 /**
  * I am a new handler
  */
-component{
+component {
+// component secured{
 
 	// DI
 	property name="teamService" inject="entityService:Team";
@@ -39,18 +40,30 @@ component{
 	 * index
 	 */
 	function index( event, rc, prc ){
+		param rc.partname = "----";
+		param rc.year = 1875;
 		return teamService
-			.list( asQuery=false )
+			// .newCriteria()
+			// .ilike("name", "%" & rc.partname & "%")
+			// // .like("division.name", "tlan") // marche pas
+			// .joinTo("division","d")
+			// .like("d.name", "%tlan%") 
+			// .list()
+			//.findAllByName(rc.partname)
+			//.findAllByNameLike("%" & rc.partname & "%")
+			.findAllByNameLikeAndFirstYearOfPlayGreaterThan(
+					"%" & rc.partname & "%", 
+					rc.year)
 			// Map the entities to mementos
 			.map( function( item ){
-				return item.getMemento( includes="id" );
+				return item.getMemento( includes=["id", "division"] );
 			} );
 	}
 
 	/**
 	 * create
 	 */
-	function create( event, rc, prc ){
+	function create( event, rc, prc ) secured {
 		prc.team = teamService
 			.new( {
 				name : rc.name,
@@ -68,7 +81,7 @@ component{
 		// return getInstance( "Team" )
 		return teamService
 			.get( rc.id ?: 0 )
-			.getMemento( includes="id" );
+			.getMemento( includes=["id", "division"] );
 	}
 
 	/**
