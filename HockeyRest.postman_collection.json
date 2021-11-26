@@ -1,0 +1,495 @@
+{
+	"info": {
+		"_postman_id": "69ed38d4-cf70-4895-9986-7415da315ab6",
+		"name": "HockeyDev",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1 equipe",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Mapple Leafs de Toronto\",\r\n    \"active\": true,\r\n    \"city\": \"Toronto\",\r\n    \"firstYearOfPlay\" : 1950\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:59644/equipes",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "59644",
+					"path": [
+						"equipes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1 equipe NO VALID",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"M\",\r\n    \"active\": true,\r\n    \"city\": \"Toronto\",\r\n    \"firstYearOfPlay\" : 1800\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:59644/equipes",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "59644",
+					"path": [
+						"equipes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "teams",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:59644/teams",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "59644",
+					"path": [
+						"teams"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "equipes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:59644/equipes",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "59644",
+					"path": [
+						"equipes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "equipes AUTH",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2Mzc5NDQzNDcsImlzcyI6ImluZGV4LmNmbT9ldmVudD0iLCJzdWIiOjEsImV4cCI6MTYzNzk0Nzk0Nywic2NvcGUiOiIiLCJqdGkiOiJCNDkyQUUzOTkzMUVEMjI3QUMxQTIyNkVGNDk4NjNFRCJ9.pl3tWnz9qNADpfCI7Lp2HOeYEoUXui7A1G8Ac1Ft2JtCkKOBgMOlyxT2Ngir_5TYBiD8KY4TREqXgRxSKSw0tA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:59644/equipes?partname=Les Canadiens de Montréal",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "59644",
+					"path": [
+						"equipes"
+					],
+					"query": [
+						{
+							"key": "partname",
+							"value": "Canadiens",
+							"disabled": true
+						},
+						{
+							"key": "partname",
+							"value": "Les Canadiens de Montréal"
+						},
+						{
+							"key": "year",
+							"value": "1910",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "divisions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:59644/divisions",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "59644",
+					"path": [
+						"divisions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "players",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:59644/players",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "59644",
+					"path": [
+						"players"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "new division",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n      \"name\" : \"Metropolitan\",\r\n      \"nameShort\" : \"Metro\",\r\n      \"abbreviation\" : \"M\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:59644/divisions",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "59644",
+					"path": [
+						"divisions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "new player",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Josh Anderson\",\r\n    \"birthdate\":\"1994-05-07\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:59644/players",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "59644",
+					"path": [
+						"players"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "new team",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Mapple Leafs de Toronto\",\r\n    \"active\": true,\r\n    \"city\": \"Toronto\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:59644/teams",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "59644",
+					"path": [
+						"teams"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fname\":\"matthias\",\r\n    \"lname\":\"colin\",\r\n    \"email\":\"matthias@learning64.net\",\r\n    \"password\":\"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:59644/api/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "59644",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user whoami",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2Mzc5MzE0MDEsImlzcyI6ImluZGV4LmNmbT9ldmVudD0iLCJzdWIiOjEsImV4cCI6MTYzNzkzNTAwMSwic2NvcGUiOiIiLCJqdGkiOiJCRTU1REU1OTAwMTJGMjFFMzYyMTM5OENCNTIzMEJCRSJ9.giKuIYbyUDe-V6HNW2fSkCGEdrGwTTY_Y8m3feM3FfI-L8gcw-AZbHbnXg_nzYek9x4FivDAABK7Wcj50_NIjw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:59644/api/whoami",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "59644",
+					"path": [
+						"api",
+						"whoami"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"admin@coldbox.org\",\r\n    \"password\":\"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:59644/api/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "59644",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user login NOK",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"admin@coldbox.org\",\r\n    \"password\":\"azerty\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:59644/api/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "59644",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "new team AUTH",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Mapple Leafs de Toronto\",\r\n    \"active\": true,\r\n    \"city\": \"Toronto\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:59644/api/teams2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "59644",
+					"path": [
+						"api",
+						"teams2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user logout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2Mzc5NDQzNDcsImlzcyI6ImluZGV4LmNmbT9ldmVudD0iLCJzdWIiOjEsImV4cCI6MTYzNzk0Nzk0Nywic2NvcGUiOiIiLCJqdGkiOiJCNDkyQUUzOTkzMUVEMjI3QUMxQTIyNkVGNDk4NjNFRCJ9.pl3tWnz9qNADpfCI7Lp2HOeYEoUXui7A1G8Ac1Ft2JtCkKOBgMOlyxT2Ngir_5TYBiD8KY4TREqXgRxSKSw0tA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:59644/api/logout",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "59644",
+					"path": [
+						"api",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
