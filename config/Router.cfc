@@ -30,12 +30,12 @@ component {
 	// 	get( "/api/echo", "Echo.index" );
 
 	// 	// API Authentication Routes
-	// 	post( "/api/login", "Auth.login" );
-	// 	post( "/api/logout", "Auth.logout" );
-	// 	post( "/api/register", "Auth.register" );
+		post( "/api/login", "Auth.login" );
+		post( "/api/logout", "Auth.logout" );
+		post( "/api/register", "Auth.register" );
 
 	// 	// API Secured Routes
-	// 	get( "/api/whoami", "Echo.whoami" );
+		get( "/api/whoami", "Echo.whoami" );
 
 	// 	// Conventions based routing
 	// 	route( ":handler/:action?" ).end();

@@ -1,7 +1,8 @@
 /**
  * I am a new handler
  */
-component{
+//component secured {
+component {
 
 	property name="teamService" inject="entityService:Team";
 
@@ -54,7 +55,7 @@ component{
 	/**
  * create a person
  */
-function create( event, rc, prc ){
+function create( event, rc, prc ) secured{
     prc.team = teamService
         .new( {
             name     : rc.name,
